@@ -1,0 +1,13 @@
+# My Apps
+- ## Basic Environment
+    - [ROS 2 Humble](https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debians.html)
+    - [Gazebo](https://gazebosim.org/docs/garden/install_ubuntu)
+- ## Communication
+    - [WeChat](https://com-store-packages.uniontech.com/appstore/pool/appstore/c/com.qq.weixin.deepin/com.qq.weixin.deepin_3.4.0.38deepin16_i386.deb) *(Based on [Deepin-wine](https://github.com/zq1997/deepin-wine))*
+    - [Feishu](https://www.feishu.cn/download)
+- ## Entertainment
+    - [YesPlayMusic](https://github.com/qier222/YesPlayMusic) *(A beautiful 3rd-party NetEase client)*
+- ## Tool
+    - [Microsoft Edge](https://www.microsoft.com/zh-cn/edge)
+    - [Flypy](http://flypy.ysepan.com/) *(A new Simplified Chinese IME combining Pinyin and glyph)*
+        - [ibus-rime](https://github.com/rime/ibus-rime) is needed.
