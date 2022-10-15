@@ -1,10 +1,12 @@
 # AzureTestRepo
 用于展示***作为新生***的我的任务的完成情况。
 
+## [学习路线](https://github.com/AzureSpace531/navigation_group/blob/main/%E5%AF%BC%E8%88%AA%E7%BB%84%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF.md#c)
+
 ## 任务清单：
 - [x] 环境准备
-- [ ] C++基础任务
-- [ ] ROS2基础任务
+- [ ] [C++基础任务](https://github.com/AzureSpace531/navigation_group/blob/main/%E5%AF%BC%E8%88%AA%E7%BB%84%E6%8B%9B%E6%96%B0%E4%BB%BB%E5%8A%A1/basic_task/Cpp_task%E8%AE%B2%E8%A7%A3.md)
+- [ ] [ROS2基础任务](https://github.com/AzureSpace531/navigation_group/tree/main/%E5%AF%BC%E8%88%AA%E7%BB%84%E6%8B%9B%E6%96%B0%E4%BB%BB%E5%8A%A1/ros2/%E5%9F%BA%E7%A1%80)
 - [ ] 视觉里程计
 - [ ] 完整的机器人视觉slam的VO
 - [ ] docker使用
