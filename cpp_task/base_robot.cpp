@@ -28,7 +28,8 @@ string status(int &health_1, int &health_2)
             return "The bullet shot!";
         }
     health_1-=40;
-    return "The gun blew up!";
+    cout<<"The gun blew up! Again! ";
+    return status(health_1,health_2);
 }
 
 int main()

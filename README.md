@@ -36,3 +36,4 @@
 | 10.16 | 开始尝试编写[基础任务](./cpp_task/base_robot.cpp)，<br /> 尝试在Windows上手CLion，Ubuntu继续使用[VS Code](./AppList.md)<br />[C++随机数（`rand`和 `srand`）函数用法详解](http://c.biancheng.net/view/1352.html "不理想的生成方式")<br />[如何优雅的用C++生成随机数](https://zhuanlan.zhihu.com/p/442008589 "更随机的随机数") | 用 ``rand()``和 ``srand()``所生成的随机数不够随机| 找到文章[如何优雅的用C++生成随机数](https://zhuanlan.zhihu.com/p/442008589 "更随机的随机数")。目前已成功生成较好的随机数|
 | 10.17 | 继续编写[基础任务](./cpp_task/base_robot.cpp)，定义了 ``boom``和 ``ramdom``函数，方便调用。| 函数实参与形参类型不符||
 | 10.18 | 完成C++基础任务，准备补充学习语法<br />准备重新安装Ubuntu 20.04，因为ROS Neotic不支持Ubuntu 22.04|| 误打误撞，靠吃点老本把基础任务做出来了|
+| 10.19 | 继续完善C++基础任务|如果炸膛，如何让机器人再来一局|通过递归完成操作。
