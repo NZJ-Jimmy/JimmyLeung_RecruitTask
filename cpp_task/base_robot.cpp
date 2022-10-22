@@ -3,47 +3,66 @@
 #include <random>
 #include <climits>
 using namespace std;
-int robot_1 = 200, robot_2 = 200;
-int random()
+struct robot
 {
-    // random_device seed;                                   //硬件生成随机数种子
-    // ranlux48 engine(seed());                              //利用种子生成随机数引擎
-    // uniform_int_distribution<> distrib(INT_MIN, INT_MAX); //设置随机数范围，并为均匀分布
-    // return distrib(engine);
-    srand(time(0));
-    return rand();
+    string name;
+    int health;
+} contestant[2] = {{"Robot A", 200}, {"Robot B", 200}};     // basic info of robots.
+
+int current_robot = -1;                                     // record the active robot.
+
+int rnd()                                                   // generate the random num.
+{
+    random_device seed;                                   //硬件生成随机数种子
+    ranlux48 engine(seed());                              //利用种子生成随机数引擎
+    uniform_int_distribution<> distrib(INT_MIN, INT_MAX); //设置随机数范围，并为均匀分布
+    return distrib(engine);
 }
 
-bool end() { return (robot_1 <= 0) || (robot_2 <= 0); }
-
-string status(int &health_1, int &health_2)
+bool end()                                                  // to judge if the game is end.
 {
-    int r=random();
-    cout<<r<<' ';
+    return (contestant[0].health <= 0) || (contestant[1].health <= 0); 
+}
+
+void status()                                               // to output the current health status.
+{
+    cout<<contestant[0].name<<": \t"<<contestant[0].health<<endl;
+    cout<<contestant[1].name<<": \t"<<contestant[1].health<<endl;
+}
+
+void play(robot &robot_1, robot &robot_2)                   // game rule
+{
     if (!end())
-        if (r%6!=0 || r%2!=0) return "No shooting";
-        else if (r%3==0) 
+    {
+        cout << robot_1.name << "'s round:";
+        int r = rnd();
+        cout << r << endl;
+        if (r % 6 == 0 || r % 2 == 0)
+            cout << "No shooting" << endl;
+        else if (r % 3 == 0)
         {
-            health_2-=10;
-            return "The bullet shot!";
+            robot_2.health -= 10;
+            cout << "The bullet shot!" << endl;
         }
-    health_1-=40;
-    cout<<"The gun blew up! Again! ";
-    return status(health_1,health_2);
+        else
+        {
+            robot_1.health -= 40;
+            cout << "The gun blew up! " << endl;
+            status();
+            return play(robot_1, robot_2);                  // blow up, to play again.
+        }
+        status();
+    }
 }
 
 int main()
 {
-    while (!end())
+    do
     {
-        cout<<"Robot 1's round:"<<status(robot_1,robot_2)<<endl;
-        cout<</*"Robot 1:"<<*/robot_1<<' '<</*"Robot 2:"<<*/robot_2<<endl;
-        getchar();
-        if (!end())
-            {
-                cout<<"Robot 2's round:"<<status(robot_2,robot_1)<<endl;
-                cout<</*"Robot 1:"<<*/robot_1<<' '<</*"Robot 2:"<<*/robot_2<<endl;
-            }
-        getchar();
-    }
+        current_robot++;
+        play(contestant[current_robot % 2], contestant[(current_robot + 1) % 2]);   // round between 2.
+        getchar();                                          // wait for the next round.
+    } while (!end());
+    cout<<contestant[current_robot % 2].name<<" won the game!";
+    return 0;
 }
